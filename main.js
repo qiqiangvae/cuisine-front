@@ -4,6 +4,7 @@ import uView from '@/uni_modules/uview-ui'
 import Vue from 'vue'
 import api from 'utils/api.js'
 
+// api
 Vue.prototype.$api = api
 Vue.config.productionTip = false
 App.mpType = 'app'

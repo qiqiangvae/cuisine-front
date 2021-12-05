@@ -18,28 +18,7 @@
 		},
 		data() {
 			return {
-				articles: [{
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, {
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, {
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, {
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, {
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, {
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, {
-					title: 'docker 基本使用',
-					synopsis: 'Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。'
-				}, ],
+				articles: [],
 				banners: [{
 					image: 'https://www.qiqiang.online/medias/featureimages/0.jpg',
 					title: '标题1'
@@ -80,14 +59,18 @@
 				console.log('item', item);
 			},
 			onClickArticle(article) {
+				uni.navigateTo({
+					url: `article/articleView?id=${article.id}`
+				});
 				console.log(article)
 			},
+			// 获取文章列表
 			articlePage() {
 				let url = "articlePage";
 				this.$api(url)
 					.then((res) => {
 						console.log(res)
-						this.articles = res.data.context;
+						this.articles = res.data.content;
 					})
 					.catch((err) => {
 						this.articles = [];

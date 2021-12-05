@@ -1,2 +1,5 @@
-.hbuilderx/**
-uni_modules/**
+.hbuilderx/*
+uni_modules/*
+node_modules/*
+unpackage/*
+ 
