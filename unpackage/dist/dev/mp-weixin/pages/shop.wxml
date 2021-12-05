@@ -1,0 +1,1 @@
+<view><u-search bind:input="__e" vue-id="4b946e12-1" placeholder="日照香炉生紫烟" shape="round" clearabled="{{true}}" value="{{searchWord}}" data-event-opts="{{[['^input',[['__set_model',['','searchWord','$event',[]]]]]]}}" bind:__l="__l"></u-search></view>

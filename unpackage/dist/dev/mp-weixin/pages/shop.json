@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商城",
+  "usingComponents": {
+    "u-search": "/uni_modules/uview-ui/components/u-search/u-search"
+  }
+}
