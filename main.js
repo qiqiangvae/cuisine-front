@@ -2,10 +2,7 @@ import App from './App'
 // main.js
 import uView from '@/uni_modules/uview-ui'
 import Vue from 'vue'
-import api from 'utils/api.js'
 
-// api
-Vue.prototype.$api = api
 Vue.config.productionTip = false
 App.mpType = 'app'
 Vue.use(uView);
@@ -13,14 +10,6 @@ Vue.use(uView);
 const app = new Vue({
 	...App
 })
+// 引入请求封装，将app参数传递到配置中
+require('utils/request.js')(app)
 app.$mount()
-
-// // #ifdef VUE3
-// import { createSSRApp } from 'vue'
-// export function createApp() {
-//   const app = createSSRApp(App)
-//   return {
-//     app
-//   }
-// }
-// // #endif

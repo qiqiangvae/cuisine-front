@@ -2,4 +2,5 @@
 uni_modules/*
 node_modules/*
 unpackage/*
+package-lock.json
  

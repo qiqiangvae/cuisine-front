@@ -5,9 +5,7 @@
 </template>
 
 <script>
-	import {
-		marked
-	} from "marked"
+	import mdUtil from '../../utils/mdUtil.js'
 
 	export default {
 		data() {
@@ -22,14 +20,16 @@
 		},
 		methods: {
 			markdown2html(md) {
-				return marked.parse(md)
+				return mdUtil.parse(md)
 			},
 			getById(id) {
 				let url = `article/${id}`;
-				this.$api(url)
+				uni.$u.http.get(url)
 					.then((res) => {
-						console.log(res)
-						this.article = res.data;
+						this.article = res;
+						uni.setNavigationBarTitle({
+							title: this.article.title
+						});
 					})
 					.catch((err) => {
 						this.article = {
